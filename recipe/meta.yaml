@@ -1,5 +1,5 @@
 {% set name = "graphdatascience" %}
-{% set version = "1.10" %}
+{% set version = "1.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/graphdatascience-{{ version }}.tar.gz
-  sha256: 7699b15417a923c89c5b7f07ffb4e073141f6cf711b0082cb82341fcee968101
+  sha256: 61d8308d5de7de799401c896591869f183eaeb848fee1a2585dbc1e9297a404b
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
