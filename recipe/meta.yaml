@@ -1,35 +1,37 @@
 {% set name = "graphdatascience" %}
-{% set version = "1.10" %}
+{% set version = "1.13" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/graphdatascience-{{ version }}.tar.gz
-  sha256: 7699b15417a923c89c5b7f07ffb4e073141f6cf711b0082cb82341fcee968101
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/graphdatascience-{{ version }}.tar.gz
+  sha256: ba8166632b12307140f6fbef2dcafd862fa7e0383babb89a27b0239af84c8ba8
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.9
     - setuptools >=42
     - wheel
     - pip
   run:
-    - python >=3.8
+    - python >=3.9
     - multimethod >=1.0,<2.0
-    - neo4j-python-driver >=4.4.2,<6.0
+    - neo4j-python-driver >=4.4.12,<6.0
     - pandas >=1.0,<3.0
-    - pyarrow >=11.0,<16.0
+    - pyarrow-all >=15.0.2, < 19.0
     - textdistance >=4.0,<5.0
     - tqdm >=4.0,<5.0
     - typing-extensions >=4.0,<5.0
     - requests
+    - tenacity >=9.0
+    - numpy <2.0
 
 test:
   imports:
@@ -77,3 +79,4 @@ about:
 extra:
   recipe-maintainers:
     - mbestipa
+    - FlorentinD
