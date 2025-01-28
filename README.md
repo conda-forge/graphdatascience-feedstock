@@ -181,4 +181,5 @@ Feedstock Maintainers
 =====================
 
 * [@mbestipa](https://github.com/mbestipa/)
+* [@FlorentinD](https://github.com/FlorentinD/)
 
