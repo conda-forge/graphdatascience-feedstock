@@ -1,13 +1,13 @@
 {% set name = "graphdatascience" %}
-{% set version = "2.0" %}
+{% set version = "2.1" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/graphdatascience-{{ version }}.tar.gz
-  sha256: f583677a0fe1d10346381a45a6f06a259bf9ce7d82ff40d9c42c793e1b9045aa
+  sha256: cde3743357c478d6e562ac7c52d82cd378550b855b41c1f40868060eb4ffaf9e
 
 build:
   noarch: python
@@ -23,15 +23,15 @@ requirements:
   run:
     - python >=3.10
     - multimethod >=1.0,<3.0
-    - neo4j-python-driver >=4.4.12,<7.0
-    - pandas >=1.0,<3.0
-    - pyarrow-all >=17.0,<23.0
+    - neo4j-python-driver >=5.26.0,<7.0
+    - pandas >=2.0,<4.0
+    - pyarrow-all >=21.0,<26.0
     - textdistance >=4.0,<5.0
     - tqdm >=4.0,<5.0
     - typing-extensions >=4.0,<5.0
     - requests
     - tenacity >=9.0
-    - numpy <2.4
+    - numpy <3.0
     - pydantic >=2.11
 
 test:
